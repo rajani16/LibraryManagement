@@ -32,6 +32,11 @@ public class AddBooks extends javax.swing.JFrame {
 
         AddBookspage = new javax.swing.JLabel();
         Backadd = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -42,7 +47,7 @@ public class AddBooks extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AddBookspage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/add boook.jpg"))); // NOI18N
+        AddBookspage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/add book.jpg"))); // NOI18N
         getContentPane().add(AddBookspage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Backadd.setText("jLabel1");
@@ -52,6 +57,21 @@ public class AddBooks extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Backadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 405, 60, 30));
+
+        jTextField1.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 110, 350, -1));
+
+        jTextField2.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 170, 350, -1));
+
+        jTextField3.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 230, 350, -1));
+
+        jTextField4.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 290, 350, -1));
+
+        jTextField5.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 350, 350, -1));
 
         setSize(new java.awt.Dimension(900, 550));
         setLocationRelativeTo(null);
@@ -117,5 +137,10 @@ public class AddBooks extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddBookspage;
     private javax.swing.JLabel Backadd;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

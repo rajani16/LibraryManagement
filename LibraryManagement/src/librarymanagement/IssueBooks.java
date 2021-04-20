@@ -11,12 +11,12 @@ import java.awt.Color;
  *
  * @author Rajani
  */
-public class FrontPage extends javax.swing.JFrame {
+public class IssueBooks extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrontPage
+     * Creates new form IssueBooks
      */
-    public FrontPage() {
+    public IssueBooks() {
         initComponents();
         setBackground(new Color(0,0,0,0));
     }
@@ -31,13 +31,9 @@ public class FrontPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        AddBooksbutton = new javax.swing.JLabel();
-        IssueBooksbutton = new javax.swing.JLabel();
+        BackIssue = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setName("label1"); // NOI18N
-        setUndecorated(true);
-        setOpacity(0.0F);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -45,25 +41,18 @@ public class FrontPage extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/front page final.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/librarymanagement/Issue books.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 550));
 
-        AddBooksbutton.setText("jLabel2");
-        AddBooksbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+        BackIssue.setText("jLabel2");
+        BackIssue.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddBooksbuttonMouseClicked(evt);
+                BackIssueMouseClicked(evt);
             }
         });
-        getContentPane().add(AddBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 85, 150, 50));
+        getContentPane().add(BackIssue, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 390, 60, 30));
 
-        IssueBooksbutton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                IssueBooksbuttonMouseClicked(evt);
-            }
-        });
-        getContentPane().add(IssueBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 265, 150, 30));
-
-        setSize(new java.awt.Dimension(900, 550));
+        setSize(new java.awt.Dimension(916, 589));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -82,24 +71,17 @@ public class FrontPage extends javax.swing.JFrame {
                      
                  }
         }
-        
     }//GEN-LAST:event_formWindowOpened
 
-    private void AddBooksbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddBooksbuttonMouseClicked
-        new AddBooks().setVisible(true);
+    private void BackIssueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackIssueMouseClicked
+        new FrontPage().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_AddBooksbuttonMouseClicked
-
-    private void IssueBooksbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IssueBooksbuttonMouseClicked
-        new IssueBooks().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_IssueBooksbuttonMouseClicked
+    }//GEN-LAST:event_BackIssueMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) 
-    {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -112,22 +94,27 @@ public class FrontPage extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrontPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(IssueBooks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(IssueBooks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(IssueBooks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(IssueBooks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new FrontPage().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new IssueBooks().setVisible(true);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AddBooksbutton;
-    private javax.swing.JLabel IssueBooksbutton;
+    private javax.swing.JLabel BackIssue;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
