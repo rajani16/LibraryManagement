@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package librarymanagement;
-
-import java.awt.Color;
-
 /**
  *
  * @author Rajani
@@ -18,7 +15,8 @@ public class IssueBooks extends javax.swing.JFrame {
      */
     public IssueBooks() {
         initComponents();
-        setBackground(new Color(0,0,0,0));
+        
+         
     }
 
     /**
@@ -50,7 +48,7 @@ public class IssueBooks extends javax.swing.JFrame {
                 BackIssueMouseClicked(evt);
             }
         });
-        getContentPane().add(BackIssue, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 390, 60, 30));
+        getContentPane().add(BackIssue, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 390, 60, 20));
 
         setSize(new java.awt.Dimension(916, 589));
         setLocationRelativeTo(null);

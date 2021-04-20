@@ -19,6 +19,7 @@ public class AddBooks extends javax.swing.JFrame {
     public AddBooks() {
         initComponents();
         setBackground(new Color(0,0,0,0));
+        
     }
 
     /**

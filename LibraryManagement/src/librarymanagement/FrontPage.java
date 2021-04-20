@@ -61,7 +61,7 @@ public class FrontPage extends javax.swing.JFrame {
                 IssueBooksbuttonMouseClicked(evt);
             }
         });
-        getContentPane().add(IssueBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 265, 150, 30));
+        getContentPane().add(IssueBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 265, 130, 40));
 
         setSize(new java.awt.Dimension(900, 550));
         setLocationRelativeTo(null);
