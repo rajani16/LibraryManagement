@@ -33,6 +33,7 @@ public class FrontPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         AddBooksbutton = new javax.swing.JLabel();
         IssueBooksbutton = new javax.swing.JLabel();
+        ReturnBooksbutton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("label1"); // NOI18N
@@ -62,6 +63,14 @@ public class FrontPage extends javax.swing.JFrame {
             }
         });
         getContentPane().add(IssueBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(594, 265, 130, 40));
+
+        ReturnBooksbutton.setText("jLabel2");
+        ReturnBooksbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ReturnBooksbuttonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(ReturnBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 435, 160, 40));
 
         setSize(new java.awt.Dimension(900, 550));
         setLocationRelativeTo(null);
@@ -94,6 +103,11 @@ public class FrontPage extends javax.swing.JFrame {
         new IssueBooks().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_IssueBooksbuttonMouseClicked
+
+    private void ReturnBooksbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReturnBooksbuttonMouseClicked
+         new ReturnBooks().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ReturnBooksbuttonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -128,6 +142,7 @@ public class FrontPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddBooksbutton;
     private javax.swing.JLabel IssueBooksbutton;
+    private javax.swing.JLabel ReturnBooksbutton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,14 @@
  * and open the template in the editor.
  */
 package librarymanagement;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import java.awt.HeadlessException;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Rajani
@@ -14,10 +22,9 @@ public class IssueBooks extends javax.swing.JFrame {
      * Creates new form IssueBooks
      */
     public IssueBooks() {
-        initComponents();
-        
+        initComponents();    
          
-    }
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,6 +37,11 @@ public class IssueBooks extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         BackIssue = new javax.swing.JLabel();
+        saveIssue = new javax.swing.JLabel();
+        bookid2 = new javax.swing.JTextField();
+        studentid2 = new javax.swing.JTextField();
+        issuedate2 = new javax.swing.JTextField();
+        duedate2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -49,6 +61,26 @@ public class IssueBooks extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BackIssue, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 390, 60, 20));
+
+        saveIssue.setText("jLabel2");
+        saveIssue.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveIssueMouseClicked(evt);
+            }
+        });
+        getContentPane().add(saveIssue, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 385, 80, 30));
+
+        bookid2.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(bookid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 130, 370, -1));
+
+        studentid2.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(studentid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 190, 370, -1));
+
+        issuedate2.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(issuedate2, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 250, 370, -1));
+
+        duedate2.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(duedate2, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 310, 370, -1));
 
         setSize(new java.awt.Dimension(916, 589));
         setLocationRelativeTo(null);
@@ -75,6 +107,21 @@ public class IssueBooks extends javax.swing.JFrame {
         new FrontPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackIssueMouseClicked
+
+    private void saveIssueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveIssueMouseClicked
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement", "root", "");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "insert into issuebooks (BookID, StudentID, IssueDate, DueDate) values ('"+bookid2.getText()+"', '"+studentid2.getText()+"', '"+issuedate2.getText()+"', '"+duedate2.getText()+"')";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Data successfullly inserted");
+                       
+        }
+        catch(HeadlessException | ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error" +ex);
+        }
+    }//GEN-LAST:event_saveIssueMouseClicked
 
     /**
      * @param args the command line arguments
@@ -113,6 +160,12 @@ public class IssueBooks extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackIssue;
+    private javax.swing.JTextField bookid2;
+    private javax.swing.JTextField duedate2;
+    private javax.swing.JTextField issuedate2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel saveIssue;
+    private javax.swing.JTextField studentid2;
     // End of variables declaration//GEN-END:variables
 }
+

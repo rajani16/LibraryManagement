@@ -5,7 +5,13 @@
  */
 package librarymanagement;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 import java.awt.Color;
+import java.awt.HeadlessException;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,11 +39,12 @@ public class AddBooks extends javax.swing.JFrame {
 
         AddBookspage = new javax.swing.JLabel();
         Backadd = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        bookid = new javax.swing.JTextField();
+        namee = new javax.swing.JTextField();
+        publisherr = new javax.swing.JTextField();
+        pricee = new javax.swing.JTextField();
+        publisheryearr = new javax.swing.JTextField();
+        SaveAdd = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -59,20 +66,33 @@ public class AddBooks extends javax.swing.JFrame {
         });
         getContentPane().add(Backadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 405, 60, 30));
 
-        jTextField1.setBackground(new java.awt.Color(193, 193, 224));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 110, 350, -1));
+        bookid.setBackground(new java.awt.Color(193, 193, 224));
+        bookid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookidActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bookid, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 110, 350, -1));
 
-        jTextField2.setBackground(new java.awt.Color(193, 193, 224));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 170, 350, -1));
+        namee.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(namee, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 170, 350, -1));
 
-        jTextField3.setBackground(new java.awt.Color(193, 193, 224));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 230, 350, -1));
+        publisherr.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(publisherr, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 230, 350, -1));
 
-        jTextField4.setBackground(new java.awt.Color(193, 193, 224));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 290, 350, -1));
+        pricee.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(pricee, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 290, 350, -1));
 
-        jTextField5.setBackground(new java.awt.Color(193, 193, 224));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 350, 350, -1));
+        publisheryearr.setBackground(new java.awt.Color(193, 193, 224));
+        getContentPane().add(publisheryearr, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 350, 350, -1));
+
+        SaveAdd.setText("jLabel1");
+        SaveAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaveAddMouseClicked(evt);
+            }
+        });
+        getContentPane().add(SaveAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 405, 70, 30));
 
         setSize(new java.awt.Dimension(900, 550));
         setLocationRelativeTo(null);
@@ -99,6 +119,25 @@ public class AddBooks extends javax.swing.JFrame {
         new FrontPage().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BackaddMouseClicked
+
+    private void SaveAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaveAddMouseClicked
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/librarymanagement", "root", "");
+            Statement stmt = (Statement) con.createStatement();
+            String query = "insert into addbooks (BookID, Name, Publisher, price,publisheryear) values ('"+bookid.getText()+"', '"+namee.getText()+"', '"+publisherr.getText()+"', '"+pricee.getText()+"', '"+publisheryearr.getText()+"')";
+            stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Data successfullly inserted");
+                       
+        }
+        catch(HeadlessException | ClassNotFoundException | SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error"+ ex);
+        }
+    }//GEN-LAST:event_SaveAddMouseClicked
+
+    private void bookidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bookidActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,10 +177,12 @@ public class AddBooks extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddBookspage;
     private javax.swing.JLabel Backadd;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel SaveAdd;
+    private javax.swing.JTextField bookid;
+    private javax.swing.JTextField namee;
+    private javax.swing.JTextField pricee;
+    private javax.swing.JTextField publisherr;
+    private javax.swing.JTextField publisheryearr;
     // End of variables declaration//GEN-END:variables
+
 }
