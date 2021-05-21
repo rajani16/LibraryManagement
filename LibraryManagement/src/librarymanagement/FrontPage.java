@@ -34,6 +34,8 @@ public class FrontPage extends javax.swing.JFrame {
         AddBooksbutton = new javax.swing.JLabel();
         IssueBooksbutton = new javax.swing.JLabel();
         ReturnBooksbutton = new javax.swing.JLabel();
+        Viewissuebutton = new javax.swing.JLabel();
+        viewbooksbutton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("label1"); // NOI18N
@@ -72,6 +74,22 @@ public class FrontPage extends javax.swing.JFrame {
         });
         getContentPane().add(ReturnBooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(584, 435, 160, 40));
 
+        Viewissuebutton.setText("jLabel2");
+        Viewissuebutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ViewissuebuttonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Viewissuebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 345, 170, 40));
+
+        viewbooksbutton.setText("jLabel2");
+        viewbooksbutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewbooksbuttonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(viewbooksbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(574, 175, 160, 40));
+
         setSize(new java.awt.Dimension(900, 550));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -84,7 +102,7 @@ public class FrontPage extends javax.swing.JFrame {
          this.setOpacity(f);
          try
          {
-             Thread.sleep(50);
+             Thread.sleep(10);
          }
          catch(InterruptedException e)
                  {
@@ -108,6 +126,15 @@ public class FrontPage extends javax.swing.JFrame {
          new ReturnBooks().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ReturnBooksbuttonMouseClicked
+
+    private void ViewissuebuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewissuebuttonMouseClicked
+        
+    }//GEN-LAST:event_ViewissuebuttonMouseClicked
+
+    private void viewbooksbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewbooksbuttonMouseClicked
+        new Viewbooks().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewbooksbuttonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -143,6 +170,8 @@ public class FrontPage extends javax.swing.JFrame {
     private javax.swing.JLabel AddBooksbutton;
     private javax.swing.JLabel IssueBooksbutton;
     private javax.swing.JLabel ReturnBooksbutton;
+    private javax.swing.JLabel Viewissuebutton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel viewbooksbutton;
     // End of variables declaration//GEN-END:variables
 }
