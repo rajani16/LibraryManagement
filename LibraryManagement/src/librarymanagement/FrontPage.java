@@ -128,7 +128,8 @@ public class FrontPage extends javax.swing.JFrame {
     }//GEN-LAST:event_ReturnBooksbuttonMouseClicked
 
     private void ViewissuebuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewissuebuttonMouseClicked
-        
+        new ViewissueBooks().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ViewissuebuttonMouseClicked
 
     private void viewbooksbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewbooksbuttonMouseClicked
